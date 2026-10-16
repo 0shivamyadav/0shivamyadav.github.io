@@ -1,63 +1,404 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Shivam Yadav - Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shivam Yadav | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: #020617;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        section {
+            padding: 80px 10%;
+        }
+
+        .home {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .home h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .home h2 {
+            color: #38bdf8;
+            margin-bottom: 20px;
+        }
+
+        .home p {
+            max-width: 650px;
+            color: #cbd5e1;
+            font-size: 18px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            margin-right: 10px;
+            background: #38bdf8;
+            color: #020617;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #7dd3fc;
+        }
+
+        h2.section-title {
+            color: #38bdf8;
+            font-size: 35px;
+            margin-bottom: 25px;
+        }
+
+        .about p {
+            max-width: 800px;
+            color: #cbd5e1;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            background: #1e293b;
+            padding: 12px 20px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+        }
+
+        .project h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .education {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 700px;
+        }
+
+        .education p {
+            color: #cbd5e1;
+        }
+
+        .links a {
+            display: inline-block;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .contact p {
+            margin: 10px 0;
+            color: #cbd5e1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #020617;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .home h1 {
+                font-size: 40px;
+            }
+
+            section {
+                padding: 60px 7%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Shivam Yadav</h1>
-    <h2>B.Tech Student | Java Programmer</h2>
+    <nav>
+        <h2>Shivam Yadav</h2>
 
-    <hr>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <h2>About Me</h2>
-    <p>
-        I am a B.Tech student interested in Java programming,
-        problem solving, and technology. I am currently
-        improving my programming skills through coding practice
-        and hands-on projects.
-    </p>
 
-    <h2>Skills</h2>
-    <ul>
-        <li>Java</li>
-        <li>Data Structures and Algorithms</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Arduino</li>
-        <li>Git and GitHub</li>
-    </ul>
+    <section id="home" class="home">
 
-    <h2>Projects</h2>
+        <h1>Hi, I'm Shivam Yadav</h1>
 
-    <h3>Motion-Triggered Photo Booth</h3>
-    <p>
-        A project that uses a motion sensor and camera
-        to capture a photo when motion is detected.
-    </p>
+        <h2>B.Tech Student | Java Programmer</h2>
 
-    <h3>Library Management System</h3>
-    <p>
-        A Java-based project for managing books and
-        library operations.
-    </p>
+        <p>
+            I am a B.Tech student interested in Java programming,
+            problem solving, Data Structures and Algorithms,
+            and building practical technology projects.
+        </p>
 
-    <h2>Coding Profiles</h2>
+        <div class="buttons">
 
-    <p>
-        <a href="https://github.com/0shivamyadav">GitHub</a>
-    </p>
+            <a class="btn"
+               href="https://github.com/0shivamyadav"
+               target="_blank">
+                GitHub
+            </a>
 
-    <p>
-        <a href="https://leetcode.com/">LeetCode</a>
-    </p>
+            <a class="btn"
+               href="https://leetcode.com/"
+               target="_blank">
+                LeetCode
+            </a>
 
-    <h2>Contact</h2>
+        </div>
 
-    <p>
-        Email: YOUR_EMAIL_HERE
-    </p>
+    </section>
+
+
+    <section id="about" class="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <p>
+            I am a B.Tech student who is currently developing
+            my programming and problem-solving skills. I enjoy
+            learning Java, practicing Data Structures and
+            Algorithms, and working on hands-on projects using
+            technology such as Arduino.
+        </p>
+
+    </section>
+
+
+    <section id="skills">
+
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills">
+
+            <div class="skill">Java</div>
+            <div class="skill">Data Structures</div>
+            <div class="skill">Algorithms</div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">Arduino</div>
+            <div class="skill">Git</div>
+            <div class="skill">GitHub</div>
+
+        </div>
+
+    </section>
+
+
+    <section id="projects">
+
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>Motion-Triggered Photo Booth</h3>
+
+                <p>
+                    A hardware project that uses a motion
+                    sensor and camera to automatically capture
+                    a photo when motion is detected.
+                </p>
+
+                <a class="btn"
+                   href="https://github.com/0shivamyadav"
+                   target="_blank">
+                    GitHub
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Library Management System</h3>
+
+                <p>
+                    A Java-based project designed to manage
+                    books and basic library operations.
+                </p>
+
+                <a class="btn"
+                   href="https://github.com/0shivamyadav"
+                   target="_blank">
+                    GitHub
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Java Problem Solving</h3>
+
+                <p>
+                    Practicing Data Structures and Algorithms
+                    problems using Java to improve programming
+                    and problem-solving skills.
+                </p>
+
+                <a class="btn"
+                   href="https://leetcode.com/"
+                   target="_blank">
+                    LeetCode
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="education">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="education">
+
+            <h3>Bachelor of Technology (B.Tech)</h3>
+
+            <p>
+                Currently pursuing B.Tech.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section id="contact" class="contact">
+
+        <h2 class="section-title">Contact</h2>
+
+        <p>Email: YOUR_EMAIL_HERE</p>
+
+        <div class="links">
+
+            <a href="https://github.com/0shivamyadav"
+               target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/"
+               target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="https://leetcode.com/"
+               target="_blank">
+                LeetCode
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>© 2026 Shivam Yadav. All Rights Reserved.</p>
+
+    </footer>
 
 </body>
+
 </html>
