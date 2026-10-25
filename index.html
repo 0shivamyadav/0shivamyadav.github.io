@@ -2,12 +2,15 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Shivam Yadav | Portfolio</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -17,19 +20,26 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #0f172a;
+            background: #0b1120;
             color: white;
             line-height: 1.6;
         }
 
+        /* NAVBAR */
+
         nav {
-            background: #020617;
+            width: 100%;
             padding: 20px 8%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            background: rgba(2, 6, 23, 0.95);
+
             position: sticky;
             top: 0;
+
             z-index: 1000;
         }
 
@@ -43,42 +53,104 @@
             gap: 25px;
         }
 
-        nav a {
+        nav ul li a {
             color: white;
             text-decoration: none;
+            font-size: 15px;
         }
 
-        nav a:hover {
+        nav ul li a:hover {
             color: #38bdf8;
         }
 
+
+        /* GENERAL */
+
         section {
-            padding: 80px 10%;
+            padding: 90px 10%;
         }
+
+        .section-title {
+            font-size: 35px;
+            color: #38bdf8;
+            margin-bottom: 35px;
+        }
+
+
+        /* HOME */
 
         .home {
             min-height: 90vh;
+
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 60px;
         }
 
-        .home h1 {
-            font-size: 55px;
+        .home-text {
+            max-width: 650px;
+        }
+
+        .home-text h3 {
+            color: #94a3b8;
+            font-size: 22px;
             margin-bottom: 10px;
         }
 
-        .home h2 {
+        .home-text h1 {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .home-text h2 {
             color: #38bdf8;
             margin-bottom: 20px;
         }
 
-        .home p {
-            max-width: 650px;
+        .home-text p {
             color: #cbd5e1;
             font-size: 18px;
         }
+
+
+        /* PHOTO */
+
+        .photo-box {
+            width: 280px;
+            height: 280px;
+
+            border-radius: 50%;
+
+            border: 5px solid #38bdf8;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            background: #1e293b;
+
+            flex-shrink: 0;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .photo-placeholder {
+            text-align: center;
+            color: #94a3b8;
+            padding: 20px;
+        }
+
+
+        /* BUTTONS */
 
         .buttons {
             margin-top: 30px;
@@ -86,12 +158,19 @@
 
         .btn {
             display: inline-block;
-            padding: 12px 22px;
+
+            padding: 12px 24px;
+
             margin-right: 10px;
+
             background: #38bdf8;
+
             color: #020617;
+
             text-decoration: none;
+
             border-radius: 6px;
+
             font-weight: bold;
         }
 
@@ -99,245 +178,297 @@
             background: #7dd3fc;
         }
 
-        h2.section-title {
-            color: #38bdf8;
-            font-size: 35px;
-            margin-bottom: 25px;
-        }
+
+        /* ABOUT */
 
         .about p {
-            max-width: 800px;
+            max-width: 850px;
+
             color: #cbd5e1;
+
+            font-size: 17px;
         }
+
+
+        /* SKILLS */
 
         .skills {
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 15px;
         }
 
         .skill {
-            background: #1e293b;
             padding: 12px 20px;
-            border-radius: 6px;
+
+            background: #1e293b;
+
             border: 1px solid #334155;
+
+            border-radius: 8px;
         }
+
+
+        /* PROJECTS */
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
             gap: 25px;
         }
 
         .project {
             background: #1e293b;
+
             padding: 25px;
-            border-radius: 10px;
+
+            border-radius: 12px;
+
             border: 1px solid #334155;
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+
+            border-color: #38bdf8;
         }
 
         .project h3 {
             color: #38bdf8;
-            margin-bottom: 10px;
+
+            margin-bottom: 12px;
         }
 
         .project p {
             color: #cbd5e1;
+
             margin-bottom: 20px;
         }
 
-        .education {
-            background: #1e293b;
-            padding: 25px;
-            border-radius: 10px;
-            max-width: 700px;
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 25px;
         }
 
-        .education p {
+        .stat-card {
+            background: #1e293b;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            border: 1px solid #334155;
+
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            color: #38bdf8;
+
+            margin-bottom: 15px;
+        }
+
+        .stat-card img {
+            max-width: 100%;
+
+            border-radius: 8px;
+        }
+
+
+        /* EDUCATION */
+
+        .education-card {
+            background: #1e293b;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            max-width: 700px;
+
+            border: 1px solid #334155;
+        }
+
+        .education-card h3 {
+            color: #38bdf8;
+
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
             color: #cbd5e1;
         }
 
-        .links a {
-            display: inline-block;
-            margin-right: 15px;
-            margin-bottom: 15px;
-            color: #38bdf8;
-            text-decoration: none;
-        }
+
+        /* CONTACT */
 
         .contact p {
-            margin: 10px 0;
             color: #cbd5e1;
+
+            margin: 10px 0;
         }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #38bdf8;
+
+            text-decoration: none;
+
+            margin-right: 20px;
+        }
+
+
+        /* FOOTER */
 
         footer {
             text-align: center;
+
             padding: 25px;
+
             background: #020617;
+
             color: #94a3b8;
         }
 
-        @media (max-width: 700px) {
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
             nav {
                 flex-direction: column;
+
                 gap: 15px;
             }
 
             nav ul {
-                gap: 12px;
                 flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 15px;
+            }
+
+            .home {
+                flex-direction: column-reverse;
+
+                text-align: center;
+
                 justify-content: center;
             }
 
-            .home h1 {
-                font-size: 40px;
+            .home-text h1 {
+                font-size: 42px;
+            }
+
+            .photo-box {
+                width: 220px;
+
+                height: 220px;
             }
 
             section {
-                padding: 60px 7%;
+                padding: 70px 7%;
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
+    <!-- NAVBAR -->
+
     <nav>
+
         <h2>Shivam Yadav</h2>
 
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#stats">Stats</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
         </ul>
+
     </nav>
 
 
+    <!-- HOME -->
+
     <section id="home" class="home">
 
-        <h1>Hi, I'm Shivam Yadav</h1>
 
-        <h2>B.Tech Student | Java Programmer</h2>
+        <div class="home-text">
 
-        <p>
-            I am a B.Tech student interested in Java programming,
-            problem solving, Data Structures and Algorithms,
-            and building practical technology projects.
-        </p>
+            <h3>Hello, I'm</h3>
 
-        <div class="buttons">
+            <h1>Shivam Yadav</h1>
 
-            <a class="btn"
-               href="https://github.com/0shivamyadav"
-               target="_blank">
-                GitHub
-            </a>
+            <h2>B.Tech Student | Java Developer</h2>
 
-            <a class="btn"
-               href="https://leetcode.com/"
-               target="_blank">
-                LeetCode
-            </a>
-
-        </div>
-
-    </section>
+            <p>
+                I am a B.Tech student passionate about
+                programming, problem solving, Data Structures
+                and Algorithms, and building practical projects.
+            </p>
 
 
-    <section id="about" class="about">
+            <div class="buttons">
 
-        <h2 class="section-title">About Me</h2>
-
-        <p>
-            I am a B.Tech student who is currently developing
-            my programming and problem-solving skills. I enjoy
-            learning Java, practicing Data Structures and
-            Algorithms, and working on hands-on projects using
-            technology such as Arduino.
-        </p>
-
-    </section>
-
-
-    <section id="skills">
-
-        <h2 class="section-title">Skills</h2>
-
-        <div class="skills">
-
-            <div class="skill">Java</div>
-            <div class="skill">Data Structures</div>
-            <div class="skill">Algorithms</div>
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">Arduino</div>
-            <div class="skill">Git</div>
-            <div class="skill">GitHub</div>
-
-        </div>
-
-    </section>
-
-
-    <section id="projects">
-
-        <h2 class="section-title">Projects</h2>
-
-        <div class="projects">
-
-            <div class="project">
-
-                <h3>Motion-Triggered Photo Booth</h3>
-
-                <p>
-                    A hardware project that uses a motion
-                    sensor and camera to automatically capture
-                    a photo when motion is detected.
-                </p>
-
-                <a class="btn"
-                   href="https://github.com/0shivamyadav"
-                   target="_blank">
+                <a
+                    class="btn"
+                    href="https://github.com/0shivamyadav"
+                    target="_blank">
                     GitHub
                 </a>
 
-            </div>
 
-
-            <div class="project">
-
-                <h3>Library Management System</h3>
-
-                <p>
-                    A Java-based project designed to manage
-                    books and basic library operations.
-                </p>
-
-                <a class="btn"
-                   href="https://github.com/0shivamyadav"
-                   target="_blank">
-                    GitHub
-                </a>
-
-            </div>
-
-
-            <div class="project">
-
-                <h3>Java Problem Solving</h3>
-
-                <p>
-                    Practicing Data Structures and Algorithms
-                    problems using Java to improve programming
-                    and problem-solving skills.
-                </p>
-
-                <a class="btn"
-                   href="https://leetcode.com/"
-                   target="_blank">
+                <a
+                    class="btn"
+                    href="https://leetcode.com/"
+                    target="_blank">
                     LeetCode
                 </a>
 
@@ -345,19 +476,45 @@
 
         </div>
 
+
+        <!-- PHOTO -->
+
+        <div class="photo-box">
+
+            <div class="photo-placeholder">
+
+                <p>YOUR PHOTO</p>
+
+                <small>
+                    We will add your photo here.
+                </small>
+
+            </div>
+
+        </div>
+
+
     </section>
 
 
-    <section id="education">
+    <!-- ABOUT -->
 
-        <h2 class="section-title">Education</h2>
+    <section id="about">
 
-        <div class="education">
+        <h2 class="section-title">
+            About Me
+        </h2>
 
-            <h3>Bachelor of Technology (B.Tech)</h3>
+        <div class="about">
 
             <p>
-                Currently pursuing B.Tech in Computer Science and Engineering.
+
+                I am a B.Tech student currently developing
+                my programming and problem-solving skills.
+                I enjoy learning Java, practicing Data
+                Structures and Algorithms, and building
+                practical technology projects.
+
             </p>
 
         </div>
@@ -365,26 +522,231 @@
     </section>
 
 
-    <section id="contact" class="contact">
+    <!-- SKILLS -->
 
-        <h2 class="section-title">Contact</h2>
+    <section id="skills">
 
-        <p>Email: 0shivam7055@gmail.com</p>
+        <h2 class="section-title">
+            Skills
+        </h2>
 
-        <div class="links">
 
-            <a href="https://github.com/0shivamyadav"
-               target="_blank">
+        <div class="skills">
+
+            <div class="skill">Java</div>
+
+            <div class="skill">Data Structures</div>
+
+            <div class="skill">Algorithms</div>
+
+            <div class="skill">HTML</div>
+
+            <div class="skill">CSS</div>
+
+            <div class="skill">Arduino</div>
+
+            <div class="skill">Git</div>
+
+            <div class="skill">GitHub</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            Projects
+        </h2>
+
+
+        <div class="projects">
+
+
+            <div class="project">
+
+                <h3>
+                    Motion-Triggered Photo Booth
+                </h3>
+
+                <p>
+
+                    A hardware project using a motion
+                    sensor and camera to automatically
+                    capture photos when motion is detected.
+
+                </p>
+
+                <a
+                    class="btn"
+                    href="https://github.com/0shivamyadav"
+                    target="_blank">
+                    GitHub
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>
+                    Library Management System
+                </h3>
+
+                <p>
+
+                    A Java project designed to manage
+                    books and basic library operations.
+
+                </p>
+
+                <a
+                    class="btn"
+                    href="https://github.com/0shivamyadav"
+                    target="_blank">
+                    GitHub
+                </a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>
+                    Java Problem Solving
+                </h3>
+
+                <p>
+
+                    Practicing Data Structures and
+                    Algorithms problems using Java.
+
+                </p>
+
+                <a
+                    class="btn"
+                    href="https://leetcode.com/"
+                    target="_blank">
+                    LeetCode
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- GITHUB + LEETCODE STATS -->
+
+    <section id="stats">
+
+        <h2 class="section-title">
+            Coding Statistics
+        </h2>
+
+
+        <div class="stats">
+
+
+            <!-- GITHUB -->
+
+            <div class="stat-card">
+
+                <h3>
+                    GitHub Streak
+                </h3>
+
+                <p>
+                    Your GitHub contribution streak
+                    will appear here.
+                </p>
+
+            </div>
+
+
+            <!-- LEETCODE -->
+
+            <div class="stat-card">
+
+                <h3>
+                    LeetCode Streak
+                </h3>
+
+                <p>
+                    Your LeetCode statistics and
+                    streak will appear here.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            Education
+        </h2>
+
+
+        <div class="education-card">
+
+            <h3>
+                Bachelor of Technology (B.Tech)
+            </h3>
+
+            <p>
+                Currently pursuing B.Tech.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact
+        </h2>
+
+
+        <p>
+            Email: YOUR_EMAIL_HERE
+        </p>
+
+
+        <div class="social-links">
+
+            <a
+                href="https://github.com/0shivamyadav"
+                target="_blank">
                 GitHub
             </a>
 
-            <a href="https://www.linkedin.com/in/0shivamty7055/"
-               target="_blank">
+
+            <a
+                href="https://www.linkedin.com/"
+                target="_blank">
                 LinkedIn
             </a>
 
-            <a href="https://leetcode.com/u/00Shivamyadav/"
-               target="_blank">
+
+            <a
+                href="https://leetcode.com/"
+                target="_blank">
                 LeetCode
             </a>
 
@@ -393,11 +755,16 @@
     </section>
 
 
+    <!-- FOOTER -->
+
     <footer>
 
-        <p>© 2026 Shivam Yadav. All Rights Reserved.</p>
+        <p>
+            © 2026 Shivam Yadav. All Rights Reserved.
+        </p>
 
     </footer>
+
 
 </body>
 
