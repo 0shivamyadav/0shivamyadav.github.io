@@ -491,6 +491,15 @@
     text-align: center;
     font-size: 13px;
 }
+    .github-contributions-inside {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+}
+
+.github-contributions-inside h3 {
+    margin-bottom: 15px;
+}
 
 /* END GITHUB HEATMAP */
 
@@ -751,7 +760,8 @@
 
             <!-- GITHUB -->
             
-<div class="stat-card">
+<div class="stat-card github-streak-card">
+
     <h3>GitHub Streak</h3>
 
     <img
@@ -759,27 +769,31 @@
         alt="GitHub Streak"
         style="width:100%; max-width:495px;"
     >
+
+    <div class="github-contributions-inside">
+
+        <h3>GitHub Contributions</h3>
+
+        <div class="github-heatmap-wrapper">
+            <div id="github-heatmap"></div>
+        </div>
+
+        <div class="github-heatmap-legend">
+            <span>Less</span>
+            <span class="legend-box level-0"></span>
+            <span class="legend-box level-1"></span>
+            <span class="legend-box level-2"></span>
+            <span class="legend-box level-3"></span>
+            <span class="legend-box level-4"></span>
+            <span>More</span>
+        </div>
+
+        <div id="github-tooltip" class="github-tooltip"></div>
+
+    </div>
+
 </div>
             
-            <div class="stat-card github-heatmap-card">
-    <h3>GitHub Contributions</h3>
-
-    <div class="github-heatmap-wrapper">
-        <div id="github-heatmap"></div>
-    </div>
-
-    <div class="github-heatmap-legend">
-        <span>Less</span>
-        <span class="legend-box level-0"></span>
-        <span class="legend-box level-1"></span>
-        <span class="legend-box level-2"></span>
-        <span class="legend-box level-3"></span>
-        <span class="legend-box level-4"></span>
-        <span>More</span>
-    </div>
-
-    <div id="github-tooltip" class="github-tooltip"></div>
-</div>
 
             <!-- LEETCODE -->
 
