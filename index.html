@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +19,7 @@
             scroll-behavior: smooth;
         }
 
+
         body {
             font-family: Arial, sans-serif;
             background: #050805;
@@ -25,31 +27,30 @@
             line-height: 1.6;
         }
 
-        /* NAVBAR */
+
+        /* =========================
+           NAVBAR
+           ========================= */
 
         nav {
             width: 100%;
             padding: 20px 8%;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
-
             background: rgba(5, 8, 5, 0.97);
-
             border-bottom: 1px solid #16351f;
-
             position: sticky;
             top: 0;
-
             z-index: 1000;
         }
 
+
         nav h2 {
             color: #00ff66;
-
             text-shadow: 0 0 10px rgba(0, 255, 102, 0.25);
         }
+
 
         nav ul {
             display: flex;
@@ -57,49 +58,54 @@
             gap: 25px;
         }
 
+
         nav ul li a {
             color: #e8f5e9;
             text-decoration: none;
             font-size: 15px;
-
             transition: 0.3s;
         }
+
 
         nav ul li a:hover {
             color: #00ff66;
         }
 
 
-        /* GENERAL */
+        /* =========================
+           GENERAL
+           ========================= */
 
         section {
             padding: 90px 10%;
         }
 
+
         .section-title {
             font-size: 35px;
             color: #00ff66;
             margin-bottom: 35px;
-
             text-shadow: 0 0 12px rgba(0, 255, 102, 0.18);
         }
 
 
-        /* HOME */
+        /* =========================
+           HOME
+           ========================= */
 
         .home {
             min-height: 90vh;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
-
             gap: 60px;
         }
+
 
         .home-text {
             max-width: 650px;
         }
+
 
         .home-text h3 {
             color: #8aa18a;
@@ -107,17 +113,19 @@
             margin-bottom: 10px;
         }
 
+
         .home-text h1 {
             font-size: 60px;
             margin-bottom: 10px;
-
             color: #f1fff3;
         }
+
 
         .home-text h2 {
             color: #00ff66;
             margin-bottom: 20px;
         }
+
 
         .home-text p {
             color: #b8c9b8;
@@ -125,337 +133,436 @@
         }
 
 
-        /* PHOTO */
+        /* =========================
+           PHOTO
+           ========================= */
 
         .photo-box {
             width: 280px;
             height: 280px;
-
             border-radius: 50%;
-
             border: 5px solid #00ff66;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             overflow: hidden;
-
             background: #0d140d;
-
             flex-shrink: 0;
-
             box-shadow:
                 0 0 20px rgba(0, 255, 102, 0.15),
                 0 0 50px rgba(0, 255, 102, 0.05);
         }
 
+
         .photo-box img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
         }
 
-        .photo-placeholder {
-            text-align: center;
-            color: #8aa18a;
-            padding: 20px;
-        }
 
-
-        /* BUTTONS */
+        /* =========================
+           BUTTONS
+           ========================= */
 
         .buttons {
             margin-top: 30px;
         }
 
+
         .btn {
             display: inline-block;
-
             padding: 12px 24px;
-
             margin-right: 10px;
-
             background: #00ff66;
-
             color: #041006;
-
             text-decoration: none;
-
             border-radius: 6px;
-
             font-weight: bold;
-
             transition: 0.3s;
-
             box-shadow: 0 0 12px rgba(0, 255, 102, 0.12);
         }
 
+
         .btn:hover {
             background: #39ff88;
-
             transform: translateY(-2px);
-
-            box-shadow:
-                0 0 18px rgba(0, 255, 102, 0.25);
+            box-shadow: 0 0 18px rgba(0, 255, 102, 0.25);
         }
 
 
-        /* ABOUT */
+        /* =========================
+           ABOUT
+           ========================= */
 
         .about p {
             max-width: 850px;
-
             color: #b8c9b8;
-
             font-size: 17px;
         }
 
 
-        /* SKILLS */
+        /* =========================
+           SKILLS
+           ========================= */
 
         .skills {
             display: flex;
-
             flex-wrap: wrap;
-
             gap: 15px;
         }
 
+
         .skill {
             padding: 12px 20px;
-
             background: #0d140d;
-
             border: 1px solid #16351f;
-
             border-radius: 8px;
-
             color: #dff5e3;
-
             transition: 0.3s;
         }
 
+
         .skill:hover {
             border-color: #00ff66;
-
             color: #00ff66;
-
             transform: translateY(-2px);
-
             box-shadow: 0 0 12px rgba(0, 255, 102, 0.08);
         }
 
 
-        /* PROJECTS */
+        /* =========================
+           PROJECTS
+           ========================= */
 
         .projects {
             display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(260px, 1fr));
-
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
         }
 
+
         .project {
             background: #0d140d;
-
             padding: 25px;
-
             border-radius: 12px;
-
             border: 1px solid #16351f;
-
             transition: 0.3s;
-
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
         }
 
+
         .project:hover {
             transform: translateY(-5px);
-
             border-color: #00ff66;
-
-            box-shadow:
-                0 10px 30px rgba(0, 255, 102, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 255, 102, 0.08);
         }
+
 
         .project h3 {
             color: #00ff66;
-
             margin-bottom: 12px;
         }
 
+
         .project p {
             color: #b8c9b8;
-
             margin-bottom: 20px;
         }
 
 
-        /* STATS */
+        /* =========================
+           PROFILE STAT CARDS
+           ========================= */
 
-        .stats {
+        .profile-stats-grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(300px, 1fr));
-
-            gap: 25px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
         }
 
-        .stat-card {
+
+        .profile-card {
             background: #0d140d;
-
-            padding: 25px;
-
-            border-radius: 12px;
-
+            padding: 24px;
+            border-radius: 16px;
             border: 1px solid #16351f;
-
-            text-align: center;
-
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-        }
-
-        .stat-card h3 {
-            color: #00ff66;
-
-            margin-bottom: 15px;
-        }
-
-        .stat-card img {
-            max-width: 100%;
-
-            border-radius: 8px;
+            transition: 0.3s ease;
         }
 
 
-        /* EDUCATION */
-
-        .education-card {
-            background: #0d140d;
-
-            padding: 25px;
-
-            border-radius: 12px;
-
-            max-width: 700px;
-
-            border: 1px solid #16351f;
-
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-        }
-
-        .education-card h3 {
-            color: #00ff66;
-
-            margin-bottom: 10px;
-        }
-
-        .education-card p {
-            color: #b8c9b8;
+        .profile-card:hover {
+            transform: translateY(-4px);
+            border-color: #00ff66;
+            box-shadow: 0 12px 30px rgba(0, 255, 102, 0.08);
         }
 
 
-        /* CONTACT */
-
-        .contact p {
-            color: #b8c9b8;
-
-            margin: 10px 0;
-        }
-
-        .social-links {
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            color: #00ff66;
-
-            text-decoration: none;
-
-            margin-right: 20px;
-
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #39ff88;
+        .profile-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
 
-        /* FOOTER */
-
-        footer {
-            text-align: center;
-
-            padding: 25px;
-
-            background: #020502;
-
-            border-top: 1px solid #16351f;
-
-            color: #8aa18a;
+        .profile-user {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
         }
 
 
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            nav {
-                flex-direction: column;
-
-                gap: 15px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-
-                justify-content: center;
-
-                gap: 15px;
-            }
-
-            .home {
-                flex-direction: column-reverse;
-
-                text-align: center;
-
-                justify-content: center;
-            }
-
-            .home-text h1 {
-                font-size: 42px;
-            }
-
-            .photo-box {
-                width: 220px;
-
-                height: 220px;
-            }
-
-            section {
-                padding: 70px 7%;
-            }
-
+        .profile-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #00ff66;
+            background: #111a12;
+            flex-shrink: 0;
         }
 
 
-        /* GITHUB HEATMAP */
-
-        .github-heatmap-card {
+        .profile-name {
+            color: #f1fff3;
+            font-size: 18px;
+            margin: 0;
             overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
+
+
+        .profile-username {
+            color: #8aa18a;
+            font-size: 13px;
+            margin-top: 2px;
+        }
+
+
+        .live-badge {
+            color: #00ff66;
+            border: 1px solid #23683b;
+            background: rgba(0, 255, 102, 0.05);
+            border-radius: 20px;
+            padding: 4px 10px;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+
+
+        .profile-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+
+        .profile-stat-box {
+            background: #111a12;
+            border: 1px solid #16351f;
+            border-radius: 13px;
+            padding: 14px;
+            min-height: 76px;
+        }
+
+
+        .profile-stat-label {
+            display: block;
+            color: #8aa18a;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+
+        .profile-stat-value {
+            display: block;
+            color: #f1fff3;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+
+        .profile-streak {
+            margin-top: 12px;
+            min-height: auto;
+        }
+
+
+        .profile-languages {
+            margin-top: 18px;
+        }
+
+
+        .profile-small-title {
+            color: #8aa18a;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 9px;
+        }
+
+
+        .language-bar {
+            width: 100%;
+            height: 7px;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            background: #182219;
+        }
+
+
+        .language-java {
+            background: #00ff66;
+            width: 50%;
+        }
+
+
+        .language-css {
+            background: #2fa8ff;
+            width: 50%;
+        }
+
+
+        .language-text {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 8px;
+            color: #8aa18a;
+            font-size: 12px;
+        }
+
+
+        .language-text .language-one {
+            color: #00ff66;
+        }
+
+
+        .language-text .language-two {
+            color: #2fa8ff;
+        }
+
+
+        .profile-button {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 11px 16px;
+            border-radius: 10px;
+            background: #162219;
+            border: 1px solid #24452d;
+            color: #e8f5e9;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+
+        .profile-button:hover {
+            border-color: #00ff66;
+            color: #00ff66;
+            box-shadow: 0 0 12px rgba(0, 255, 102, 0.12);
+        }
+
+
+        /* =========================
+           LEETCODE
+           ========================= */
+
+        .leetcode-main-number {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+
+        .leetcode-main-number strong {
+            color: #00ff66;
+            font-size: 48px;
+            line-height: 1;
+        }
+
+
+        .leetcode-main-number span {
+            color: #8aa18a;
+            font-size: 14px;
+        }
+
+
+        .leetcode-bar {
+            width: 100%;
+            height: 7px;
+            display: flex;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 8px 0 12px;
+            background: #182219;
+        }
+
+
+        .leetcode-easy {
+            background: #00ff66;
+        }
+
+
+        .leetcode-medium {
+            background: #f0a832;
+        }
+
+
+        .leetcode-hard {
+            background: #e57c52;
+        }
+
+
+        .leetcode-difficulty {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            color: #8aa18a;
+            font-size: 12px;
+            margin-bottom: 18px;
+        }
+
+
+        .leetcode-difficulty strong {
+            color: #f1fff3;
+        }
+
+
+        .leetcode-badge {
+            font-size: 17px;
+        }
+
+
+        .profile-error {
+            color: #8aa18a;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+
+        /* =========================
+           GITHUB HEATMAP
+           ========================= */
 
         .github-heatmap-wrapper {
             width: 100%;
             overflow-x: auto;
             padding: 15px 5px;
         }
+
 
         #github-heatmap {
             display: grid;
@@ -467,37 +574,44 @@
             min-width: 100%;
         }
 
+
         .github-day {
             width: 12px;
             height: 12px;
             border-radius: 2px;
             cursor: pointer;
-            box-sizing: border-box;
         }
+
 
         .github-day.level-0 {
             background: #161b22;
         }
 
+
         .github-day.level-1 {
             background: #0e4429;
         }
+
 
         .github-day.level-2 {
             background: #006d32;
         }
 
+
         .github-day.level-3 {
             background: #26a641;
         }
+
 
         .github-day.level-4 {
             background: #39d353;
         }
 
+
         .github-day:hover {
             outline: 2px solid #00ff66;
         }
+
 
         .github-heatmap-legend {
             display: flex;
@@ -509,31 +623,38 @@
             color: #8aa18a;
         }
 
+
         .legend-box {
             width: 12px;
             height: 12px;
             border-radius: 2px;
         }
 
+
         .legend-box.level-0 {
             background: #161b22;
         }
+
 
         .legend-box.level-1 {
             background: #0e4429;
         }
 
+
         .legend-box.level-2 {
             background: #006d32;
         }
+
 
         .legend-box.level-3 {
             background: #26a641;
         }
 
+
         .legend-box.level-4 {
             background: #39d353;
         }
+
 
         .github-tooltip {
             display: none;
@@ -546,20 +667,138 @@
             font-size: 13px;
         }
 
-        .github-contributions-inside {
-            margin-top: 25px;
-            padding-top: 20px;
+
+        /* =========================
+           EDUCATION
+           ========================= */
+
+        .education-card {
+            background: #0d140d;
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 700px;
+            border: 1px solid #16351f;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        }
+
+
+        .education-card h3 {
+            color: #00ff66;
+            margin-bottom: 10px;
+        }
+
+
+        .education-card p {
+            color: #b8c9b8;
+        }
+
+
+        /* =========================
+           CONTACT
+           ========================= */
+
+        .contact p {
+            color: #b8c9b8;
+            margin: 10px 0;
+        }
+
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+
+        .social-links a {
+            color: #00ff66;
+            text-decoration: none;
+            margin-right: 20px;
+            transition: 0.3s;
+        }
+
+
+        .social-links a:hover {
+            color: #39ff88;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #020502;
             border-top: 1px solid #16351f;
+            color: #8aa18a;
         }
 
-        .github-contributions-inside h3 {
-            margin-bottom: 15px;
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+
+            .home {
+                flex-direction: column-reverse;
+                text-align: center;
+                justify-content: center;
+            }
+
+
+            .home-text h1 {
+                font-size: 42px;
+            }
+
+
+            .photo-box {
+                width: 220px;
+                height: 220px;
+            }
+
+
+            section {
+                padding: 70px 7%;
+            }
+
+
+            .profile-stats-grid {
+                grid-template-columns: 1fr;
+            }
+
         }
 
-        /* END GITHUB HEATMAP */
 
-        .github-month {
-            width: 15px;
+        @media (max-width: 500px) {
+
+            .profile-card {
+                padding: 18px;
+            }
+
+
+            .profile-stat-grid {
+                gap: 8px;
+            }
+
+
+            .leetcode-main-number strong {
+                font-size: 40px;
+            }
+
         }
 
     </style>
@@ -570,7 +809,9 @@
 <body>
 
 
-    <!-- NAVBAR -->
+    <!-- =========================
+         NAVBAR
+         ========================= -->
 
     <nav>
 
@@ -599,6 +840,10 @@
             </li>
 
             <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
                 <a href="#contact">Contact</a>
             </li>
 
@@ -607,10 +852,11 @@
     </nav>
 
 
-    <!-- HOME -->
+    <!-- =========================
+         HOME
+         ========================= -->
 
     <section id="home" class="home">
-
 
         <div class="home-text">
 
@@ -632,7 +878,8 @@
                 <a
                     class="btn"
                     href="https://github.com/0shivamyadav"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
                     GitHub
                 </a>
 
@@ -640,7 +887,8 @@
                 <a
                     class="btn"
                     href="https://leetcode.com/u/00Shivamyadav/"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
                     LeetCode
                 </a>
 
@@ -649,16 +897,20 @@
         </div>
 
 
-        <!-- PHOTO -->
-
         <div class="photo-box">
-            <img src="photo.png" alt="Shivam Yadav">
+
+            <img
+                src="photo.png"
+                alt="Shivam Yadav">
+
         </div>
 
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- =========================
+         ABOUT
+         ========================= -->
 
     <section id="about">
 
@@ -666,16 +918,15 @@
             About Me
         </h2>
 
+
         <div class="about">
 
             <p>
-
                 I am a B.Tech student currently developing
                 my programming and problem-solving skills.
                 I enjoy learning Java, practicing Data
                 Structures and Algorithms, and building
                 practical technology projects.
-
             </p>
 
         </div>
@@ -683,7 +934,9 @@
     </section>
 
 
-    <!-- SKILLS -->
+    <!-- =========================
+         SKILLS
+         ========================= -->
 
     <section id="skills">
 
@@ -715,7 +968,9 @@
     </section>
 
 
-    <!-- PROJECTS -->
+    <!-- =========================
+         PROJECTS
+         ========================= -->
 
     <section id="projects">
 
@@ -734,17 +989,16 @@
                 </h3>
 
                 <p>
-
                     A hardware project using a motion
                     sensor and camera to automatically
                     capture photos when motion is detected.
-
                 </p>
 
                 <a
                     class="btn"
                     href="https://github.com/0shivamyadav"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
                     GitHub
                 </a>
 
@@ -758,16 +1012,15 @@
                 </h3>
 
                 <p>
-
                     A Java project designed to manage
                     books and basic library operations.
-
                 </p>
 
                 <a
                     class="btn"
                     href="https://github.com/0shivamyadav"
-                    target="_blank">
+                    target="_blank"
+                    rel="noopener noreferrer">
                     GitHub
                 </a>
 
@@ -781,16 +1034,15 @@
                 </h3>
 
                 <p>
-
                     Practicing Data Structures and
                     Algorithms problems using Java.
-
                 </p>
 
                 <a
                     class="btn"
-                    href="https://leetcode.com/"
-                    target="_blank">
+                    href="https://leetcode.com/u/00Shivamyadav/"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     LeetCode
                 </a>
 
@@ -802,7 +1054,9 @@
     </section>
 
 
-    <!-- GITHUB + LEETCODE STATS -->
+    <!-- =========================
+         GITHUB + LEETCODE STATS
+         ========================= -->
 
     <section id="stats">
 
@@ -811,66 +1065,438 @@
         </h2>
 
 
-        <div class="stats">
+        <div class="profile-stats-grid">
 
 
-            <!-- GITHUB -->
+            <!-- =========================
+                 GITHUB PROFILE CARD
+                 ========================= -->
 
-            <div class="stat-card github-streak-card">
+            <div class="profile-card">
 
-                <h3>GitHub Streak</h3>
+                <div class="profile-card-header">
 
-                <img
-                    src="https://streak-stats.demolab.com/?user=0shivamyadav&theme=dark"
-                    alt="GitHub Streak"
-                    style="width:100%; max-width:495px;"
-                >
+                    <div class="profile-user">
 
-                <div class="github-contributions-inside">
+                        <img
+                            id="github-avatar"
+                            class="profile-avatar"
+                            src="https://github.com/0shivamyadav.png"
+                            alt="GitHub Profile">
 
-                    <h3>GitHub Contributions</h3>
+                        <div>
 
-                    <div class="github-heatmap-wrapper">
-                        <div id="github-heatmap"></div>
+                            <h3
+                                id="github-name"
+                                class="profile-name">
+                                0shivamyadav
+                            </h3>
+
+                            <div class="profile-username">
+                                @0shivamyadav
+                            </div>
+
+                        </div>
+
                     </div>
 
-                    <div class="github-heatmap-legend">
-                        <span>Less</span>
-                        <span class="legend-box level-0"></span>
-                        <span class="legend-box level-1"></span>
-                        <span class="legend-box level-2"></span>
-                        <span class="legend-box level-3"></span>
-                        <span class="legend-box level-4"></span>
-                        <span>More</span>
+
+                    <span class="live-badge">
+                        LIVE
+                    </span>
+
+                </div>
+
+
+                <div class="profile-stat-grid">
+
+
+                    <div class="profile-stat-box">
+
+                        <span class="profile-stat-label">
+                            Repositories
+                        </span>
+
+                        <span
+                            id="github-repos"
+                            class="profile-stat-value">
+                            --
+                        </span>
+
                     </div>
 
-                    <div id="github-tooltip" class="github-tooltip"></div>
 
+                    <div class="profile-stat-box">
+
+                        <span class="profile-stat-label">
+                            Followers
+                        </span>
+
+                        <span
+                            id="github-followers"
+                            class="profile-stat-value">
+                            --
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-stat-box">
+
+                        <span class="profile-stat-label">
+                            Following
+                        </span>
+
+                        <span
+                            id="github-following"
+                            class="profile-stat-value">
+                            --
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-stat-box">
+
+                        <span class="profile-stat-label">
+                            Contributions (1 yr)
+                        </span>
+
+                        <span
+                            id="github-contributions"
+                            class="profile-stat-value">
+                            --
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="profile-stat-box profile-streak">
+
+                    <span class="profile-stat-label">
+                        🔥 Current Streak
+                    </span>
+
+                    <span
+                        id="github-streak"
+                        class="profile-stat-value">
+                        --
+                    </span>
+
+                </div>
+
+
+                <div class="profile-languages">
+
+                    <div class="profile-small-title">
+                        Top Languages
+                    </div>
+
+
+                    <div class="language-bar">
+
+                        <div
+                            id="github-language-1"
+                            class="language-java">
+                        </div>
+
+                        <div
+                            id="github-language-2"
+                            class="language-css">
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="github-language-text"
+                        class="language-text">
+                        Loading...
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="https://github.com/0shivamyadav"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="profile-button">
+                    View GitHub profile →
+                </a>
+
+
+                <div
+                    id="github-profile-error"
+                    class="profile-error">
                 </div>
 
             </div>
 
 
-            <!-- LEETCODE -->
+            <!-- =========================
+                 LEETCODE PROFILE CARD
+                 ========================= -->
 
-            <div class="stat-card">
+            <div class="profile-card">
 
-                <h3>LeetCode Statistics</h3>
+                <div class="profile-card-header">
 
-                <img
-                    src="https://leetcard.jacoblin.cool/00Shivamyadav?theme=dark&ext=heatmap"
-                    alt="LeetCode Statistics"
-                    style="width:100%; max-width:500px;"
-                >
+                    <div class="profile-user">
+
+                        <img
+                            id="leetcode-avatar"
+                            class="profile-avatar"
+                            src="https://assets.leetcode.com/users/leetcode/avatar_1582278545.png"
+                            alt="LeetCode Profile">
+
+                        <div>
+
+                            <h3 class="profile-name">
+                                00Shivamyadav
+                            </h3>
+
+                            <div class="profile-username">
+                                @00Shivamyadav
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="live-badge">
+                        LIVE
+                    </span>
+
+                </div>
+
+
+                <div class="leetcode-main-number">
+
+                    <strong id="leetcode-total">
+                        --
+                    </strong>
+
+                    <span>
+                        problems solved
+                    </span>
+
+                </div>
+
+
+                <div class="leetcode-bar">
+
+                    <div
+                        id="leetcode-easy-bar"
+                        class="leetcode-easy">
+                    </div>
+
+                    <div
+                        id="leetcode-medium-bar"
+                        class="leetcode-medium">
+                    </div>
+
+                    <div
+                        id="leetcode-hard-bar"
+                        class="leetcode-hard">
+                    </div>
+
+                </div>
+
+
+                <div class="leetcode-difficulty">
+
+                    <span>
+                        🟢 Easy
+                        <strong id="leetcode-easy">
+                            --
+                        </strong>
+                    </span>
+
+
+                    <span>
+                        🟠 Medium
+                        <strong id="leetcode-medium">
+                            --
+                        </strong>
+                    </span>
+
+
+                    <span>
+                        🔴 Hard
+                        <strong id="leetcode-hard">
+                            --
+                        </strong>
+                    </span>
+
+                </div>
+
+
+                <div class="profile-stat-grid">
+
+
+                    <div class="profile-stat-box">
+
+                        <span class="profile-stat-label">
+                            Acceptance Rate
+                        </span>
+
+                        <span
+                            id="leetcode-acceptance"
+                            class="profile-stat-value">
+                            --
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-stat-box">
+
+                        <span class="profile-stat-label">
+                            Contest Rating
+                        </span>
+
+                        <span
+                            id="leetcode-rating"
+                            class="profile-stat-value">
+                            --
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-stat-box">
+
+                        <span class="profile-stat-label">
+                            Current Badge
+                        </span>
+
+                        <span
+                            id="leetcode-badge"
+                            class="profile-stat-value leetcode-badge">
+                            🏆 --
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-stat-box">
+
+                        <span class="profile-stat-label">
+                            🔥 Current Streak
+                        </span>
+
+                        <span
+                            id="leetcode-streak"
+                            class="profile-stat-value">
+                            --
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <a
+                    href="https://leetcode.com/u/00Shivamyadav/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="profile-button">
+                    View LeetCode profile →
+                </a>
+
+
+                <div
+                    id="leetcode-profile-error"
+                    class="profile-error">
+                </div>
 
             </div>
+
+
+        </div>
+
+
+        <!-- =========================
+             GITHUB CONTRIBUTION HEATMAP
+             ========================= -->
+
+        <div
+            class="profile-card"
+            style="margin-top:20px;">
+
+
+            <div
+                style="
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    gap:15px;
+                    flex-wrap:wrap;
+                ">
+
+                <h3
+                    style="
+                        color:#f1fff3;
+                        margin:0;
+                    ">
+                    GitHub Contributions
+                </h3>
+
+
+                <span
+                    id="github-contribution-total"
+                    style="
+                        color:#8aa18a;
+                        font-size:13px;
+                    ">
+                    Loading...
+                </span>
+
+            </div>
+
+
+            <div class="github-heatmap-wrapper">
+
+                <div id="github-heatmap"></div>
+
+            </div>
+
+
+            <div class="github-heatmap-legend">
+
+                <span>Less</span>
+
+                <span class="legend-box level-0"></span>
+                <span class="legend-box level-1"></span>
+                <span class="legend-box level-2"></span>
+                <span class="legend-box level-3"></span>
+                <span class="legend-box level-4"></span>
+
+                <span>More</span>
+
+            </div>
+
+
+            <div
+                id="github-tooltip"
+                class="github-tooltip">
+            </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- EDUCATION -->
+    <!-- =========================
+         EDUCATION
+         ========================= -->
 
     <section id="education">
 
@@ -894,7 +1520,9 @@
     </section>
 
 
-    <!-- CONTACT -->
+    <!-- =========================
+         CONTACT
+         ========================= -->
 
     <section id="contact">
 
@@ -912,21 +1540,24 @@
 
             <a
                 href="https://github.com/0shivamyadav"
-                target="_blank">
+                target="_blank"
+                rel="noopener noreferrer">
                 GitHub
             </a>
 
 
             <a
                 href="https://www.linkedin.com/in/0shivamty7055/"
-                target="_blank">
+                target="_blank"
+                rel="noopener noreferrer">
                 LinkedIn
             </a>
 
 
             <a
                 href="https://leetcode.com/u/00Shivamyadav/"
-                target="_blank">
+                target="_blank"
+                rel="noopener noreferrer">
                 LeetCode
             </a>
 
@@ -935,7 +1566,9 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+         ========================= -->
 
     <footer>
 
@@ -946,147 +1579,1126 @@
     </footer>
 
 
-<script>
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
 
-async function loadGitHubHeatmap() {
+    <script>
 
-    const username = "0shivamyadav";
 
-    const heatmap = document.getElementById("github-heatmap");
-    const tooltip = document.getElementById("github-tooltip");
+        /* =========================
+           GITHUB CONTRIBUTION HEATMAP
+           ========================= */
 
-    try {
+        async function loadGitHubHeatmap() {
 
-        const response = await fetch(
-            "https://github-contributions-api.jogruber.de/v4/" +
-            username +
-            "?y=last"
-        );
+            const username = "0shivamyadav";
 
-        const data = await response.json();
-
-        if (!data.contributions) {
-            throw new Error("GitHub contribution data not found");
-        }
-
-        const contributions = data.contributions;
-
-        // Sort dates from oldest to newest
-        contributions.sort(function(a, b) {
-            return a.date.localeCompare(b.date);
-        });
-
-        heatmap.innerHTML = "";
-
-        const contributionMap = new Map();
-
-        contributions.forEach(function(day) {
-            contributionMap.set(day.date, day);
-        });
-
-        // Start from Sunday of the first week
-        const firstDate = new Date(
-            contributions[0].date + "T00:00:00"
-        );
-
-        firstDate.setDate(
-            firstDate.getDate() - firstDate.getDay()
-        );
-
-        // End on Saturday of the last week
-        const lastDate = new Date(
-            contributions[contributions.length - 1].date +
-            "T00:00:00"
-        );
-
-        lastDate.setDate(
-            lastDate.getDate() +
-            (6 - lastDate.getDay())
-        );
-
-        let currentDate = new Date(firstDate);
-
-        while (currentDate <= lastDate) {
-
-            const dateString =
-                currentDate.getFullYear() +
-                "-" +
-                String(currentDate.getMonth() + 1).padStart(2, "0") +
-                "-" +
-                String(currentDate.getDate()).padStart(2, "0");
-
-            const dayDiv = document.createElement("div");
-
-            dayDiv.className = "github-day";
-
-            const dayData = contributionMap.get(dateString);
-
-            if (dayData) {
-
-                dayDiv.classList.add(
-                    "level-" + dayData.level
+            const heatmap =
+                document.getElementById(
+                    "github-heatmap"
                 );
 
-                const formattedDate =
-                    new Date(
-                        dayData.date + "T00:00:00"
-                    ).toLocaleDateString(
-                        "en-US",
-                        {
-                            month: "long",
-                            day: "numeric",
-                            year: "numeric"
-                        }
+            const tooltip =
+                document.getElementById(
+                    "github-tooltip"
+                );
+
+            const totalText =
+                document.getElementById(
+                    "github-contribution-total"
+                );
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        "https://github-contributions-api.jogruber.de/v4/" +
+                        username +
+                        "?y=last"
                     );
 
-                // Show date and contribution count on hover
-                dayDiv.title =
-                    dayData.count +
-                    " contributions on " +
-                    formattedDate;
 
-                // Show details when clicked
-                dayDiv.addEventListener(
-                    "click",
-                    function() {
+                const data =
+                    await response.json();
 
-                        tooltip.style.display = "block";
 
-                        tooltip.textContent =
-                            dayData.count +
-                            " contributions on " +
-                            formattedDate;
+                if (!data.contributions) {
+
+                    throw new Error(
+                        "GitHub contribution data not found"
+                    );
+
+                }
+
+
+                const contributions =
+                    data.contributions;
+
+
+                contributions.sort(
+                    function(a, b) {
+
+                        return a.date.localeCompare(
+                            b.date
+                        );
+
                     }
                 );
 
-            } else {
 
-                dayDiv.classList.add("level-0");
+                heatmap.innerHTML = "";
+
+
+                const contributionMap =
+                    new Map();
+
+
+                let totalContributions = 0;
+
+
+                contributions.forEach(
+                    function(day) {
+
+                        contributionMap.set(
+                            day.date,
+                            day
+                        );
+
+
+                        totalContributions +=
+                            Number(
+                                day.count || 0
+                            );
+
+                    }
+                );
+
+
+                totalText.textContent =
+                    totalContributions +
+                    " contributions in the last year";
+
+
+                const firstDate =
+                    new Date(
+                        contributions[0].date +
+                        "T00:00:00"
+                    );
+
+
+                firstDate.setDate(
+                    firstDate.getDate() -
+                    firstDate.getDay()
+                );
+
+
+                const lastDate =
+                    new Date(
+                        contributions[
+                            contributions.length - 1
+                        ].date +
+                        "T00:00:00"
+                    );
+
+
+                lastDate.setDate(
+                    lastDate.getDate() +
+                    (
+                        6 -
+                        lastDate.getDay()
+                    )
+                );
+
+
+                let currentDate =
+                    new Date(firstDate);
+
+
+                while (
+                    currentDate <= lastDate
+                ) {
+
+
+                    const dateString =
+                        currentDate.getFullYear() +
+                        "-" +
+                        String(
+                            currentDate.getMonth() + 1
+                        ).padStart(2, "0") +
+                        "-" +
+                        String(
+                            currentDate.getDate()
+                        ).padStart(2, "0");
+
+
+                    const dayDiv =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    dayDiv.className =
+                        "github-day";
+
+
+                    const dayData =
+                        contributionMap.get(
+                            dateString
+                        );
+
+
+                    if (dayData) {
+
+
+                        dayDiv.classList.add(
+                            "level-" +
+                            dayData.level
+                        );
+
+
+                        const formattedDate =
+                            new Date(
+                                dayData.date +
+                                "T00:00:00"
+                            ).toLocaleDateString(
+                                "en-US",
+                                {
+                                    month: "long",
+                                    day: "numeric",
+                                    year: "numeric"
+                                }
+                            );
+
+
+                        dayDiv.title =
+                            dayData.count +
+                            " contributions on " +
+                            formattedDate;
+
+
+                        dayDiv.addEventListener(
+                            "click",
+                            function() {
+
+                                tooltip.style.display =
+                                    "block";
+
+                                tooltip.textContent =
+                                    dayData.count +
+                                    " contributions on " +
+                                    formattedDate;
+
+                            }
+                        );
+
+
+                    } else {
+
+                        dayDiv.classList.add(
+                            "level-0"
+                        );
+
+                    }
+
+
+                    heatmap.appendChild(
+                        dayDiv
+                    );
+
+
+                    currentDate.setDate(
+                        currentDate.getDate() + 1
+                    );
+
+                }
+
+
+            } catch (error) {
+
+                console.error(
+                    "GitHub heatmap error:",
+                    error
+                );
+
+
+                totalText.textContent =
+                    "GitHub contributions";
+
+
+                heatmap.innerHTML =
+                    "<p style='color:#8aa18a'>" +
+                    "Unable to load GitHub contributions." +
+                    "</p>";
 
             }
 
-            heatmap.appendChild(dayDiv);
-
-            currentDate.setDate(
-                currentDate.getDate() + 1
-            );
         }
 
-    } catch (error) {
 
-        console.error(error);
 
-        heatmap.innerHTML =
-            "<p style='color:#8aa18a'>" +
-            "Unable to load GitHub contributions." +
-            "</p>";
-    }
-}
+        /* =========================
+           GITHUB PROFILE
+           ========================= */
 
-loadGitHubHeatmap();
+        async function loadGitHubProfile() {
 
-</script>
+            const username =
+                "0shivamyadav";
+
+
+            try {
+
+
+                const response =
+                    await fetch(
+                        "https://api.github.com/users/" +
+                        username
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "GitHub profile request failed"
+                    );
+
+                }
+
+
+                const user =
+                    await response.json();
+
+
+                document.getElementById(
+                    "github-avatar"
+                ).src =
+                    user.avatar_url;
+
+
+                document.getElementById(
+                    "github-name"
+                ).textContent =
+                    user.name ||
+                    username;
+
+
+                document.getElementById(
+                    "github-repos"
+                ).textContent =
+                    user.public_repos;
+
+
+                document.getElementById(
+                    "github-followers"
+                ).textContent =
+                    user.followers;
+
+
+                document.getElementById(
+                    "github-following"
+                ).textContent =
+                    user.following;
+
+
+
+                /* GitHub contribution data */
+
+                const contributionResponse =
+                    await fetch(
+                        "https://github-contributions-api.jogruber.de/v4/" +
+                        username +
+                        "?y=last"
+                    );
+
+
+                const contributionData =
+                    await contributionResponse.json();
+
+
+                const contributions =
+                    contributionData.contributions ||
+                    [];
+
+
+                let streak = 0;
+
+
+                if (
+                    contributions.length > 0
+                ) {
+
+
+                    contributions.sort(
+                        function(a, b) {
+
+                            return a.date.localeCompare(
+                                b.date
+                            );
+
+                        }
+                    );
+
+
+                    const latest =
+                        contributions[
+                            contributions.length - 1
+                        ];
+
+
+                    const latestDate =
+                        new Date(
+                            latest.date +
+                            "T00:00:00"
+                        );
+
+
+                    const today =
+                        new Date();
+
+
+                    today.setHours(
+                        0, 0, 0, 0
+                    );
+
+
+                    const yesterday =
+                        new Date(today);
+
+
+                    yesterday.setDate(
+                        yesterday.getDate() - 1
+                    );
+
+
+                    let startIndex =
+                        contributions.length - 1;
+
+
+                    if (
+                        latestDate.toDateString() !==
+                        today.toDateString() &&
+                        latestDate.toDateString() !==
+                        yesterday.toDateString()
+                    ) {
+
+                        startIndex = -1;
+
+                    }
+
+
+                    if (startIndex >= 0) {
+
+
+                        for (
+                            let i = startIndex;
+                            i >= 0;
+                            i--
+                        ) {
+
+
+                            if (
+                                Number(
+                                    contributions[i].count
+                                ) > 0
+                            ) {
+
+                                streak++;
+
+                            } else {
+
+                                break;
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+
+                document.getElementById(
+                    "github-streak"
+                ).textContent =
+                    streak +
+                    " days";
+
+
+
+                /* Top languages */
+
+                const repoResponse =
+                    await fetch(
+                        "https://api.github.com/users/" +
+                        username +
+                        "/repos?per_page=100"
+                    );
+
+
+                const repos =
+                    await repoResponse.json();
+
+
+                const languages = {};
+
+
+                repos.forEach(
+                    function(repo) {
+
+                        if (
+                            !repo.fork &&
+                            repo.language
+                        ) {
+
+                            languages[
+                                repo.language
+                            ] =
+                                (
+                                    languages[
+                                        repo.language
+                                    ] || 0
+                                ) + 1;
+
+                        }
+
+                    }
+                );
+
+
+                const sortedLanguages =
+                    Object.entries(
+                        languages
+                    )
+                    .sort(
+                        function(a, b) {
+
+                            return b[1] - a[1];
+
+                        }
+                    )
+                    .slice(0, 2);
+
+
+                if (
+                    sortedLanguages.length > 0
+                ) {
+
+
+                    const firstLanguage =
+                        sortedLanguages[0][0];
+
+
+                    const firstValue =
+                        sortedLanguages[0][1];
+
+
+                    const secondLanguage =
+                        sortedLanguages.length > 1
+                            ? sortedLanguages[1][0]
+                            : "";
+
+
+                    const secondValue =
+                        sortedLanguages.length > 1
+                            ? sortedLanguages[1][1]
+                            : 0;
+
+
+                    const totalLanguageValue =
+                        firstValue +
+                        secondValue;
+
+
+                    const firstPercent =
+                        Math.round(
+                            (
+                                firstValue /
+                                totalLanguageValue
+                            ) * 100
+                        );
+
+
+                    const secondPercent =
+                        100 -
+                        firstPercent;
+
+
+                    document.getElementById(
+                        "github-language-1"
+                    ).style.width =
+                        firstPercent +
+                        "%";
+
+
+                    document.getElementById(
+                        "github-language-2"
+                    ).style.width =
+                        secondPercent +
+                        "%";
+
+
+                    document.getElementById(
+                        "github-language-text"
+                    ).innerHTML =
+                        "<span class='language-one'>" +
+                        "● " +
+                        firstLanguage +
+                        " " +
+                        firstPercent +
+                        "%" +
+                        "</span>" +
+
+                        (
+                            secondLanguage
+                                ? "<span class='language-two'>" +
+                                  "● " +
+                                  secondLanguage +
+                                  " " +
+                                  secondPercent +
+                                  "%" +
+                                  "</span>"
+                                : ""
+                        );
+
+                }
+
+
+            } catch (error) {
+
+                console.error(
+                    "GitHub profile error:",
+                    error
+                );
+
+
+                document.getElementById(
+                    "github-profile-error"
+                ).textContent =
+                    "Some GitHub data could not be loaded.";
+
+            }
+
+        }
+
+
+
+        /* =========================
+           LEETCODE PROFILE
+           ========================= */
+
+        async function loadLeetCodeProfile() {
+
+            const username =
+                "00Shivamyadav";
+
+
+            const errorBox =
+                document.getElementById(
+                    "leetcode-profile-error"
+                );
+
+
+            try {
+
+
+                /* Profile */
+
+                const profileResponse =
+                    await fetch(
+                        "https://alfa-leetcode-api.onrender.com/" +
+                        username +
+                        "/profile"
+                    );
+
+
+                if (!profileResponse.ok) {
+
+                    throw new Error(
+                        "LeetCode profile request failed"
+                    );
+
+                }
+
+
+                const profile =
+                    await profileResponse.json();
+
+
+                if (profile.avatar) {
+
+                    document.getElementById(
+                        "leetcode-avatar"
+                    ).src =
+                        profile.avatar;
+
+                }
+
+
+                if (
+                    profile.acceptanceRate !==
+                    undefined &&
+                    profile.acceptanceRate !==
+                    null
+                ) {
+
+                    document.getElementById(
+                        "leetcode-acceptance"
+                    ).textContent =
+                        Number(
+                            profile.acceptanceRate
+                        ).toFixed(1) +
+                        "%";
+
+                }
+
+
+
+                /* Solved questions */
+
+                const solvedResponse =
+                    await fetch(
+                        "https://alfa-leetcode-api.onrender.com/" +
+                        username +
+                        "/solved"
+                    );
+
+
+                const solved =
+                    await solvedResponse.json();
+
+
+                const total =
+                    Number(
+                        solved.totalSolved || 0
+                    );
+
+
+                const easy =
+                    Number(
+                        solved.easySolved || 0
+                    );
+
+
+                const medium =
+                    Number(
+                        solved.mediumSolved || 0
+                    );
+
+
+                const hard =
+                    Number(
+                        solved.hardSolved || 0
+                    );
+
+
+                document.getElementById(
+                    "leetcode-total"
+                ).textContent =
+                    total;
+
+
+                document.getElementById(
+                    "leetcode-easy"
+                ).textContent =
+                    easy;
+
+
+                document.getElementById(
+                    "leetcode-medium"
+                ).textContent =
+                    medium;
+
+
+                document.getElementById(
+                    "leetcode-hard"
+                ).textContent =
+                    hard;
+
+
+                if (total > 0) {
+
+
+                    document.getElementById(
+                        "leetcode-easy-bar"
+                    ).style.width =
+                        (
+                            easy /
+                            total *
+                            100
+                        ) +
+                        "%";
+
+
+                    document.getElementById(
+                        "leetcode-medium-bar"
+                    ).style.width =
+                        (
+                            medium /
+                            total *
+                            100
+                        ) +
+                        "%";
+
+
+                    document.getElementById(
+                        "leetcode-hard-bar"
+                    ).style.width =
+                        (
+                            hard /
+                            total *
+                            100
+                        ) +
+                        "%";
+
+                }
+
+
+
+                /* Contest rating */
+
+                try {
+
+                    const contestResponse =
+                        await fetch(
+                            "https://alfa-leetcode-api.onrender.com/" +
+                            username +
+                            "/contest"
+                        );
+
+
+                    if (contestResponse.ok) {
+
+
+                        const contest =
+                            await contestResponse.json();
+
+
+                        if (
+                            contest.contestRating !==
+                            undefined &&
+                            contest.contestRating !==
+                            null
+                        ) {
+
+                            document.getElementById(
+                                "leetcode-rating"
+                            ).textContent =
+                                Math.round(
+                                    Number(
+                                        contest.contestRating
+                                    )
+                                );
+
+                        }
+
+                    }
+
+                } catch (error) {
+
+                    console.log(
+                        "Contest rating unavailable"
+                    );
+
+                }
+
+
+
+                /* Badge */
+
+                try {
+
+                    const badgeResponse =
+                        await fetch(
+                            "https://alfa-leetcode-api.onrender.com/" +
+                            username +
+                            "/badges"
+                        );
+
+
+                    if (badgeResponse.ok) {
+
+
+                        const badgeData =
+                            await badgeResponse.json();
+
+
+                        if (
+                            badgeData.badges &&
+                            badgeData.badges.length > 0
+                        ) {
+
+
+                            const latestBadge =
+                                badgeData.badges[
+                                    badgeData.badges.length - 1
+                                ];
+
+
+                            const badgeName =
+                                latestBadge.displayName ||
+                                latestBadge.name ||
+                                "Badge";
+
+
+                            document.getElementById(
+                                "leetcode-badge"
+                            ).textContent =
+                                "🏆 " +
+                                badgeName;
+
+                        }
+
+                    }
+
+                } catch (error) {
+
+                    console.log(
+                        "Badge unavailable"
+                    );
+
+                }
+
+
+
+                /* LeetCode streak */
+
+                try {
+
+                    const calendarResponse =
+                        await fetch(
+                            "https://alfa-leetcode-api.onrender.com/" +
+                            username +
+                            "/calendar"
+                        );
+
+
+                    if (calendarResponse.ok) {
+
+
+                        const calendar =
+                            await calendarResponse.json();
+
+
+                        if (
+                            calendar.submissionCalendar
+                        ) {
+
+
+                            const submissionCalendar =
+                                typeof calendar.submissionCalendar ===
+                                "string"
+                                    ? JSON.parse(
+                                        calendar.submissionCalendar
+                                    )
+                                    : calendar.submissionCalendar;
+
+
+                            const timestamps =
+                                Object.keys(
+                                    submissionCalendar
+                                )
+                                .filter(
+                                    function(timestamp) {
+
+                                        return Number(
+                                            submissionCalendar[
+                                                timestamp
+                                            ]
+                                        ) > 0;
+
+                                    }
+                                )
+                                .map(
+                                    function(timestamp) {
+
+                                        return Number(
+                                            timestamp
+                                        );
+
+                                    }
+                                )
+                                .sort(
+                                    function(a, b) {
+
+                                        return b - a;
+
+                                    }
+                                );
+
+
+                            let streak = 0;
+
+
+                            if (
+                                timestamps.length > 0
+                            ) {
+
+
+                                const today =
+                                    new Date();
+
+
+                                today.setHours(
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                );
+
+
+                                const latestDate =
+                                    new Date(
+                                        timestamps[0] *
+                                        1000
+                                    );
+
+
+                                latestDate.setHours(
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                );
+
+
+                                const difference =
+                                    Math.floor(
+                                        (
+                                            today -
+                                            latestDate
+                                        ) /
+                                        (
+                                            1000 *
+                                            60 *
+                                            60 *
+                                            24
+                                        )
+                                    );
+
+
+                                if (
+                                    difference <= 1
+                                ) {
+
+
+                                    let previousDate =
+                                        new Date(
+                                            latestDate
+                                        );
+
+
+                                    for (
+                                        let i = 0;
+                                        i < timestamps.length;
+                                        i++
+                                    ) {
+
+
+                                        const currentDate =
+                                            new Date(
+                                                timestamps[i] *
+                                                1000
+                                            );
+
+
+                                        currentDate.setHours(
+                                            0,
+                                            0,
+                                            0,
+                                            0
+                                        );
+
+
+                                        const daysBetween =
+                                            Math.floor(
+                                                (
+                                                    previousDate -
+                                                    currentDate
+                                                ) /
+                                                (
+                                                    1000 *
+                                                    60 *
+                                                    60 *
+                                                    24
+                                                )
+                                            );
+
+
+                                        if (
+                                            i === 0 ||
+                                            daysBetween === 1
+                                        ) {
+
+                                            streak++;
+
+                                            previousDate =
+                                                currentDate;
+
+                                        } else {
+
+                                            break;
+
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+
+                            document.getElementById(
+                                "leetcode-streak"
+                            ).textContent =
+                                streak +
+                                " days";
+
+                        }
+
+                    }
+
+                } catch (error) {
+
+                    console.log(
+                        "LeetCode streak unavailable"
+                    );
+
+                }
+
+
+            } catch (error) {
+
+                console.error(
+                    "LeetCode profile error:",
+                    error
+                );
+
+
+                errorBox.textContent =
+                    "LeetCode live data is temporarily unavailable.";
+
+            }
+
+        }
+
+
+
+        /* =========================
+           LOAD EVERYTHING
+           ========================= */
+
+        loadGitHubHeatmap();
+
+        loadGitHubProfile();
+
+        loadLeetCodeProfile();
+
+    </script>
+
 
 </body>
 
 </html>
+```
