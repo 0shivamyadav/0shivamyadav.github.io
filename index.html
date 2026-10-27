@@ -2483,14 +2483,33 @@
                             }
 
 
-                            if (badgeName) {
+                           if (badgeName) {
 
-                                document.getElementById(
-                                    "leetcode-badge"
-                                ).textContent =
-                                    "🏆 " +
-                                    badgeName;
-                            }
+    const badgeElement =
+        document.getElementById(
+            "leetcode-badge"
+        );
+
+    const badgeIcon =
+        badgeData.active &&
+        badgeData.active.icon
+            ? badgeData.active.icon
+            : "";
+
+    if (badgeIcon) {
+
+        badgeElement.innerHTML =
+            '<img src="' +
+            badgeIcon +
+            '" style="width:24px;height:24px;vertical-align:middle;margin-right:6px;">' +
+            badgeName;
+
+    } else {
+
+        badgeElement.textContent =
+            badgeName;
+    }
+}
                         }
                     }
 
