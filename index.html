@@ -1680,6 +1680,11 @@
                     totalContributions +
                     " contributions in the last year";
 
+                document.getElementById(
+                    "github-contributions"
+                ).textContent =
+                    totalContributions;
+
 
                 const firstDate =
                     new Date(
@@ -2193,206 +2198,230 @@
             const username =
                 "00Shivamyadav";
 
-
             const errorBox =
                 document.getElementById(
                     "leetcode-profile-error"
                 );
 
+            const base =
+                "https://leetcode-stats.tashif.codes/" +
+                username;
 
             try {
 
-
-                /* Profile */
+                /* =========================
+                   PROFILE
+                ========================= */
 
                 const profileResponse =
                     await fetch(
-                        "https://alfa-leetcode-api.onrender.com/" +
-                        username +
-                        "/profile"
+                        base + "/profile"
                     );
 
-
                 if (!profileResponse.ok) {
-
                     throw new Error(
                         "LeetCode profile request failed"
                     );
-
                 }
 
-
-                const profile =
+                const profileResult =
                     await profileResponse.json();
 
-
-                if (profile.avatar) {
-
-                    document.getElementById(
-                        "leetcode-avatar"
-                    ).src =
-                        profile.avatar;
-
-                }
-
-
                 if (
-                    profile.acceptanceRate !==
-                    undefined &&
-                    profile.acceptanceRate !==
-                    null
+                    profileResult.status === "success" &&
+                    profileResult.data
                 ) {
 
-                    document.getElementById(
-                        "leetcode-acceptance"
-                    ).textContent =
-                        Number(
-                            profile.acceptanceRate
-                        ).toFixed(1) +
-                        "%";
+                    const profile =
+                        profileResult.data;
 
+                    const avatar =
+                        document.getElementById(
+                            "leetcode-avatar"
+                        );
+
+                    if (profile.avatar) {
+
+                        avatar.src =
+                            profile.avatar;
+
+                    }
+
+                    avatar.onerror =
+                        function() {
+
+                            avatar.onerror = null;
+
+                            avatar.src =
+                                "https://assets.leetcode.com/users/leetcode/avatar_1582278545.png";
+
+                        };
                 }
 
 
+                /* =========================
+                   SOLVED QUESTIONS + ACCEPTANCE
+                ========================= */
 
-                /* Solved questions */
-
-                const solvedResponse =
+                const statsResponse =
                     await fetch(
-                        "https://alfa-leetcode-api.onrender.com/" +
-                        username +
-                        "/solved"
+                        base + "/stats"
                     );
 
-
-                const solved =
-                    await solvedResponse.json();
-
-
-                const total =
-                    Number(
-                        solved.totalSolved || 0
+                if (!statsResponse.ok) {
+                    throw new Error(
+                        "LeetCode stats request failed"
                     );
+                }
 
+                const statsResult =
+                    await statsResponse.json();
 
-                const easy =
-                    Number(
-                        solved.easySolved || 0
-                    );
+                if (
+                    statsResult.status === "success" &&
+                    statsResult.data
+                ) {
 
+                    const stats =
+                        statsResult.data;
 
-                const medium =
-                    Number(
-                        solved.mediumSolved || 0
-                    );
+                    const total =
+                        Number(
+                            stats.totalSolved || 0
+                        );
 
+                    const easy =
+                        Number(
+                            stats.byDifficulty &&
+                            stats.byDifficulty.easy || 0
+                        );
 
-                const hard =
-                    Number(
-                        solved.hardSolved || 0
-                    );
+                    const medium =
+                        Number(
+                            stats.byDifficulty &&
+                            stats.byDifficulty.medium || 0
+                        );
 
+                    const hard =
+                        Number(
+                            stats.byDifficulty &&
+                            stats.byDifficulty.hard || 0
+                        );
 
-                document.getElementById(
-                    "leetcode-total"
-                ).textContent =
-                    total;
-
-
-                document.getElementById(
-                    "leetcode-easy"
-                ).textContent =
-                    easy;
-
-
-                document.getElementById(
-                    "leetcode-medium"
-                ).textContent =
-                    medium;
-
-
-                document.getElementById(
-                    "leetcode-hard"
-                ).textContent =
-                    hard;
-
-
-                if (total > 0) {
+                    const acceptance =
+                        Number(
+                            stats.acceptanceRate || 0
+                        );
 
 
                     document.getElementById(
-                        "leetcode-easy-bar"
-                    ).style.width =
-                        (
-                            easy /
-                            total *
-                            100
-                        ) +
-                        "%";
+                        "leetcode-total"
+                    ).textContent =
+                        total;
 
 
                     document.getElementById(
-                        "leetcode-medium-bar"
-                    ).style.width =
-                        (
-                            medium /
-                            total *
-                            100
-                        ) +
-                        "%";
+                        "leetcode-easy"
+                    ).textContent =
+                        easy;
 
 
                     document.getElementById(
-                        "leetcode-hard-bar"
-                    ).style.width =
-                        (
-                            hard /
-                            total *
-                            100
-                        ) +
-                        "%";
+                        "leetcode-medium"
+                    ).textContent =
+                        medium;
+
+
+                    document.getElementById(
+                        "leetcode-hard"
+                    ).textContent =
+                        hard;
+
+
+                    if (acceptance > 0) {
+
+                        document.getElementById(
+                            "leetcode-acceptance"
+                        ).textContent =
+                            acceptance.toFixed(1) +
+                            "%";
+                    }
+
+
+                    if (total > 0) {
+
+                        document.getElementById(
+                            "leetcode-easy-bar"
+                        ).style.width =
+                            (
+                                easy /
+                                total *
+                                100
+                            ) +
+                            "%";
+
+
+                        document.getElementById(
+                            "leetcode-medium-bar"
+                        ).style.width =
+                            (
+                                medium /
+                                total *
+                                100
+                            ) +
+                            "%";
+
+
+                        document.getElementById(
+                            "leetcode-hard-bar"
+                        ).style.width =
+                            (
+                                hard /
+                                total *
+                                100
+                            ) +
+                            "%";
+                    }
 
                 }
 
 
-
-                /* Contest rating */
+                /* =========================
+                   CONTEST RATING
+                ========================= */
 
                 try {
 
                     const contestResponse =
                         await fetch(
-                            "https://alfa-leetcode-api.onrender.com/" +
-                            username +
-                            "/contest"
+                            base + "/contests"
                         );
-
 
                     if (contestResponse.ok) {
 
-
-                        const contest =
+                        const contestResult =
                             await contestResponse.json();
 
-
                         if (
-                            contest.contestRating !==
-                            undefined &&
-                            contest.contestRating !==
-                            null
+                            contestResult.status ===
+                                "success" &&
+                            contestResult.data
                         ) {
 
-                            document.getElementById(
-                                "leetcode-rating"
-                            ).textContent =
-                                Math.round(
-                                    Number(
-                                        contest.contestRating
-                                    )
+                            const rating =
+                                Number(
+                                    contestResult.data.rating ||
+                                    0
                                 );
 
-                        }
+                            if (rating > 0) {
 
+                                document.getElementById(
+                                    "leetcode-rating"
+                                ).textContent =
+                                    Math.round(rating);
+                            }
+                        }
                     }
 
                 } catch (error) {
@@ -2400,56 +2429,69 @@
                     console.log(
                         "Contest rating unavailable"
                     );
-
                 }
 
 
-
-                /* Badge */
+                /* =========================
+                   CURRENT BADGE
+                ========================= */
 
                 try {
 
                     const badgeResponse =
                         await fetch(
-                            "https://alfa-leetcode-api.onrender.com/" +
-                            username +
-                            "/badges"
+                            base + "/badges"
                         );
-
 
                     if (badgeResponse.ok) {
 
-
-                        const badgeData =
+                        const badgeResult =
                             await badgeResponse.json();
 
-
                         if (
-                            badgeData.badges &&
-                            badgeData.badges.length > 0
+                            badgeResult.status ===
+                                "success" &&
+                            badgeResult.data
                         ) {
 
+                            const badgeData =
+                                badgeResult.data;
 
-                            const latestBadge =
-                                badgeData.badges[
-                                    badgeData.badges.length - 1
-                                ];
-
-
-                            const badgeName =
-                                latestBadge.displayName ||
-                                latestBadge.name ||
-                                "Badge";
+                            let badgeName = "";
 
 
-                            document.getElementById(
-                                "leetcode-badge"
-                            ).textContent =
-                                "🏆 " +
-                                badgeName;
+                            if (
+                                badgeData.active &&
+                                badgeData.active.name
+                            ) {
 
+                                badgeName =
+                                    badgeData.active.name;
+
+                            } else if (
+                                badgeData.list &&
+                                badgeData.list.length > 0
+                            ) {
+
+                                const latestBadge =
+                                    badgeData.list[
+                                        badgeData.list.length - 1
+                                    ];
+
+                                badgeName =
+                                    latestBadge.name || "";
+                            }
+
+
+                            if (badgeName) {
+
+                                document.getElementById(
+                                    "leetcode-badge"
+                                ).textContent =
+                                    "🏆 " +
+                                    badgeName;
+                            }
                         }
-
                     }
 
                 } catch (error) {
@@ -2457,206 +2499,43 @@
                     console.log(
                         "Badge unavailable"
                     );
-
                 }
 
 
-
-                /* LeetCode streak */
+                /* =========================
+                   CURRENT STREAK
+                ========================= */
 
                 try {
 
-                    const calendarResponse =
+                    const heatmapResponse =
                         await fetch(
-                            "https://alfa-leetcode-api.onrender.com/" +
-                            username +
-                            "/calendar"
+                            base + "/heatmap"
                         );
 
+                    if (heatmapResponse.ok) {
 
-                    if (calendarResponse.ok) {
-
-
-                        const calendar =
-                            await calendarResponse.json();
-
+                        const heatmapResult =
+                            await heatmapResponse.json();
 
                         if (
-                            calendar.submissionCalendar
+                            heatmapResult.status ===
+                                "success" &&
+                            heatmapResult.data
                         ) {
 
-
-                            const submissionCalendar =
-                                typeof calendar.submissionCalendar ===
-                                "string"
-                                    ? JSON.parse(
-                                        calendar.submissionCalendar
-                                    )
-                                    : calendar.submissionCalendar;
-
-
-                            const timestamps =
-                                Object.keys(
-                                    submissionCalendar
-                                )
-                                .filter(
-                                    function(timestamp) {
-
-                                        return Number(
-                                            submissionCalendar[
-                                                timestamp
-                                            ]
-                                        ) > 0;
-
-                                    }
-                                )
-                                .map(
-                                    function(timestamp) {
-
-                                        return Number(
-                                            timestamp
-                                        );
-
-                                    }
-                                )
-                                .sort(
-                                    function(a, b) {
-
-                                        return b - a;
-
-                                    }
-                                );
-
-
-                            let streak = 0;
-
-
-                            if (
-                                timestamps.length > 0
-                            ) {
-
-
-                                const today =
-                                    new Date();
-
-
-                                today.setHours(
-                                    0,
-                                    0,
-                                    0,
+                            const streak =
+                                Number(
+                                    heatmapResult.data.currentStreak ||
                                     0
                                 );
-
-
-                                const latestDate =
-                                    new Date(
-                                        timestamps[0] *
-                                        1000
-                                    );
-
-
-                                latestDate.setHours(
-                                    0,
-                                    0,
-                                    0,
-                                    0
-                                );
-
-
-                                const difference =
-                                    Math.floor(
-                                        (
-                                            today -
-                                            latestDate
-                                        ) /
-                                        (
-                                            1000 *
-                                            60 *
-                                            60 *
-                                            24
-                                        )
-                                    );
-
-
-                                if (
-                                    difference <= 1
-                                ) {
-
-
-                                    let previousDate =
-                                        new Date(
-                                            latestDate
-                                        );
-
-
-                                    for (
-                                        let i = 0;
-                                        i < timestamps.length;
-                                        i++
-                                    ) {
-
-
-                                        const currentDate =
-                                            new Date(
-                                                timestamps[i] *
-                                                1000
-                                            );
-
-
-                                        currentDate.setHours(
-                                            0,
-                                            0,
-                                            0,
-                                            0
-                                        );
-
-
-                                        const daysBetween =
-                                            Math.floor(
-                                                (
-                                                    previousDate -
-                                                    currentDate
-                                                ) /
-                                                (
-                                                    1000 *
-                                                    60 *
-                                                    60 *
-                                                    24
-                                                )
-                                            );
-
-
-                                        if (
-                                            i === 0 ||
-                                            daysBetween === 1
-                                        ) {
-
-                                            streak++;
-
-                                            previousDate =
-                                                currentDate;
-
-                                        } else {
-
-                                            break;
-
-                                        }
-
-                                    }
-
-                                }
-
-                            }
-
 
                             document.getElementById(
                                 "leetcode-streak"
                             ).textContent =
                                 streak +
                                 " days";
-
                         }
-
                     }
 
                 } catch (error) {
@@ -2664,7 +2543,16 @@
                     console.log(
                         "LeetCode streak unavailable"
                     );
+                }
 
+
+                /* =========================
+                   REMOVE ERROR MESSAGE
+                ========================= */
+
+                if (errorBox) {
+
+                    errorBox.textContent = "";
                 }
 
 
@@ -2675,14 +2563,13 @@
                     error
                 );
 
+                if (errorBox) {
 
-                errorBox.textContent =
-                    "LeetCode live data is temporarily unavailable.";
-
+                    errorBox.textContent =
+                        "LeetCode live data is temporarily unavailable.";
+                }
             }
-
         }
-
 
 
         /* =========================
