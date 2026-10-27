@@ -2297,83 +2297,156 @@
                 "https://leetcode-stats.tashif.codes/" +
                 username;
 
+            let loadedSomething = false;
+
+
+            /* =========================
+               PROFILE
+               ========================= */
+
             try {
 
-                /* =========================
-                   PROFILE
-                ========================= */
-
-                const profileResponse =
+                const response =
                     await fetch(
                         base + "/profile"
                     );
 
-                if (!profileResponse.ok) {
+                if (response.ok) {
+
+                    const result =
+                        await response.json();
+
+                    if (
+                        result.status === "success" &&
+                        result.data
+                    ) {
+
+                        loadedSomething = true;
+
+                        const avatar =
+                            document.getElementById(
+                                "leetcode-avatar"
+                            );
+
+                        if (result.data.avatar) {
+
+                            avatar.src =
+                                result.data.avatar;
+                        }
+                    }
+                }
+
+            } catch (error) {
+
+                console.log(
+                    "LeetCode profile unavailable:",
+                    error
+                );
+            }
+
+
+            /* =========================
+               MAIN STATS
+               Use the summary endpoint first.
+               This is more reliable than stopping
+               the whole function if /profile fails.
+               ========================= */
+
+            try {
+
+                const response =
+                    await fetch(
+                        base
+                    );
+
+                if (!response.ok) {
                     throw new Error(
-                        "LeetCode profile request failed"
+                        "Summary request failed"
                     );
                 }
 
-                const profileResult =
-                    await profileResponse.json();
+                const result =
+                    await response.json();
 
                 if (
-                    profileResult.status === "success" &&
-                    profileResult.data
+                    result.status === "success" &&
+                    result.data
                 ) {
 
-                    const profile =
-                        profileResult.data;
+                    loadedSomething = true;
 
-                    const avatar =
+                    const summary =
+                        result.data;
+
+                    if (
+                        summary.totalSolved !==
+                        undefined
+                    ) {
+
                         document.getElementById(
-                            "leetcode-avatar"
-                        );
-
-                    if (profile.avatar) {
-
-                        avatar.src =
-                            profile.avatar;
-
+                            "leetcode-total"
+                        ).textContent =
+                            summary.totalSolved;
                     }
 
-                    avatar.onerror =
-                        function() {
+                    if (
+                        summary.currentRating !==
+                        undefined &&
+                        Number(
+                            summary.currentRating
+                        ) > 0
+                    ) {
 
-                            avatar.onerror = null;
-
-                            avatar.src =
-                                "https://assets.leetcode.com/users/leetcode/avatar_1582278545.png";
-
-                        };
+                        document.getElementById(
+                            "leetcode-rating"
+                        ).textContent =
+                            Math.round(
+                                Number(
+                                    summary.currentRating
+                                )
+                            );
+                    }
                 }
 
+            } catch (error) {
 
-                /* =========================
-                   SOLVED QUESTIONS + ACCEPTANCE
-                ========================= */
+                console.log(
+                    "LeetCode summary unavailable:",
+                    error
+                );
+            }
 
-                const statsResponse =
+
+            /* =========================
+               SOLVED BY DIFFICULTY +
+               ACCEPTANCE RATE
+               ========================= */
+
+            try {
+
+                const response =
                     await fetch(
                         base + "/stats"
                     );
 
-                if (!statsResponse.ok) {
+                if (!response.ok) {
                     throw new Error(
-                        "LeetCode stats request failed"
+                        "Stats request failed"
                     );
                 }
 
-                const statsResult =
-                    await statsResponse.json();
+                const result =
+                    await response.json();
 
                 if (
-                    statsResult.status === "success" &&
-                    statsResult.data
+                    result.status === "success" &&
+                    result.data
                 ) {
 
+                    loadedSomething = true;
+
                     const stats =
-                        statsResult.data;
+                        result.data;
 
                     const total =
                         Number(
@@ -2447,8 +2520,7 @@
                                 easy /
                                 total *
                                 100
-                            ) +
-                            "%";
+                            ) + "%";
 
 
                         document.getElementById(
@@ -2458,8 +2530,7 @@
                                 medium /
                                 total *
                                 100
-                            ) +
-                            "%";
+                            ) + "%";
 
 
                         document.getElementById(
@@ -2469,213 +2540,230 @@
                                 hard /
                                 total *
                                 100
-                            ) +
-                            "%";
+                            ) + "%";
                     }
-
                 }
-
-
-                /* =========================
-                   CONTEST RATING
-                ========================= */
-
-                try {
-
-                    const contestResponse =
-                        await fetch(
-                            base + "/contests"
-                        );
-
-                    if (contestResponse.ok) {
-
-                        const contestResult =
-                            await contestResponse.json();
-
-                        if (
-                            contestResult.status ===
-                                "success" &&
-                            contestResult.data
-                        ) {
-
-                            const rating =
-                                Number(
-                                    contestResult.data.rating ||
-                                    0
-                                );
-
-                            if (rating > 0) {
-
-                                document.getElementById(
-                                    "leetcode-rating"
-                                ).textContent =
-                                    Math.round(rating);
-                            }
-                        }
-                    }
-
-                } catch (error) {
-
-                    console.log(
-                        "Contest rating unavailable"
-                    );
-                }
-
-
-                /* =========================
-                   CURRENT BADGE
-                ========================= */
-
-                try {
-
-                    const badgeResponse =
-                        await fetch(
-                            base + "/badges"
-                        );
-
-                    if (badgeResponse.ok) {
-
-                        const badgeResult =
-                            await badgeResponse.json();
-
-                        if (
-                            badgeResult.status ===
-                                "success" &&
-                            badgeResult.data
-                        ) {
-
-                            const badgeData =
-                                badgeResult.data;
-
-                            let badgeName = "";
-
-
-                            if (
-                                badgeData.active &&
-                                badgeData.active.name
-                            ) {
-
-                                badgeName =
-                                    badgeData.active.name;
-
-                            } else if (
-                                badgeData.list &&
-                                badgeData.list.length > 0
-                            ) {
-
-                                const latestBadge =
-                                    badgeData.list[
-                                        badgeData.list.length - 1
-                                    ];
-
-                                badgeName =
-                                    latestBadge.name || "";
-                            }
-
-
-                           if (badgeName) {
-
-    const badgeElement =
-        document.getElementById(
-            "leetcode-badge"
-        );
-
-    const badgeIcon =
-        badgeData.active &&
-        badgeData.active.icon
-            ? badgeData.active.icon
-            : "";
-
-    if (badgeIcon) {
-
-        badgeElement.innerHTML =
-            '<img src="' +
-            badgeIcon +
-            '" style="width:24px;height:24px;vertical-align:middle;margin-right:6px;">' +
-            badgeName;
-
-    } else {
-
-        badgeElement.textContent =
-            badgeName;
-    }
-}
-                        }
-                    }
-
-                } catch (error) {
-
-                    console.log(
-                        "Badge unavailable"
-                    );
-                }
-
-
-                /* =========================
-                   CURRENT STREAK
-                ========================= */
-
-                try {
-
-                    const heatmapResponse =
-                        await fetch(
-                            base + "/heatmap"
-                        );
-
-                    if (heatmapResponse.ok) {
-
-                        const heatmapResult =
-                            await heatmapResponse.json();
-
-                        if (
-                            heatmapResult.status ===
-                                "success" &&
-                            heatmapResult.data
-                        ) {
-
-                            const streak =
-                                Number(
-                                    heatmapResult.data.currentStreak ||
-                                    0
-                                );
-
-                            document.getElementById(
-                                "leetcode-streak"
-                            ).textContent =
-                                streak +
-                                " days";
-                        }
-                    }
-
-                } catch (error) {
-
-                    console.log(
-                        "LeetCode streak unavailable"
-                    );
-                }
-
-
-                /* =========================
-                   REMOVE ERROR MESSAGE
-                ========================= */
-
-                if (errorBox) {
-
-                    errorBox.textContent = "";
-                }
-
 
             } catch (error) {
 
-                console.error(
-                    "LeetCode profile error:",
+                console.log(
+                    "LeetCode stats unavailable:",
                     error
                 );
+            }
 
-                if (errorBox) {
+
+            /* =========================
+               CONTEST RATING
+               ========================= */
+
+            try {
+
+                const response =
+                    await fetch(
+                        base + "/contests"
+                    );
+
+                if (!response.ok) {
+                    throw new Error(
+                        "Contest request failed"
+                    );
+                }
+
+                const result =
+                    await response.json();
+
+                if (
+                    result.status === "success" &&
+                    result.data
+                ) {
+
+                    const rating =
+                        Number(
+                            result.data.rating || 0
+                        );
+
+                    if (rating > 0) {
+
+                        loadedSomething = true;
+
+                        document.getElementById(
+                            "leetcode-rating"
+                        ).textContent =
+                            Math.round(rating);
+                    }
+                }
+
+            } catch (error) {
+
+                console.log(
+                    "Contest rating unavailable:",
+                    error
+                );
+            }
+
+
+            /* =========================
+               CURRENT BADGE
+               ========================= */
+
+            try {
+
+                const response =
+                    await fetch(
+                        base + "/badges"
+                    );
+
+                if (!response.ok) {
+                    throw new Error(
+                        "Badge request failed"
+                    );
+                }
+
+                const result =
+                    await response.json();
+
+                if (
+                    result.status === "success" &&
+                    result.data
+                ) {
+
+                    const badgeData =
+                        result.data;
+
+                    let badgeName = "";
+                    let badgeIcon = "";
+
+                    if (
+                        badgeData.active &&
+                        badgeData.active.name
+                    ) {
+
+                        badgeName =
+                            badgeData.active.name;
+
+                        badgeIcon =
+                            badgeData.active.icon || "";
+                    }
+
+
+                    if (
+                        !badgeName &&
+                        badgeData.list &&
+                        badgeData.list.length > 0
+                    ) {
+
+                        const latestBadge =
+                            badgeData.list[
+                                badgeData.list.length - 1
+                            ];
+
+                        badgeName =
+                            latestBadge.name || "";
+
+                        badgeIcon =
+                            latestBadge.icon || "";
+                    }
+
+
+                    if (badgeName) {
+
+                        loadedSomething = true;
+
+                        const badgeElement =
+                            document.getElementById(
+                                "leetcode-badge"
+                            );
+
+                        if (badgeIcon) {
+
+                            badgeElement.innerHTML =
+                                '<img src="' +
+                                badgeIcon +
+                                '" alt="Badge" ' +
+                                'style="width:24px;height:24px;' +
+                                'vertical-align:middle;' +
+                                'margin-right:6px;">' +
+                                badgeName;
+
+                        } else {
+
+                            badgeElement.textContent =
+                                badgeName;
+                        }
+                    }
+                }
+
+            } catch (error) {
+
+                console.log(
+                    "Badge unavailable:",
+                    error
+                );
+            }
+
+
+            /* =========================
+               CURRENT STREAK
+               ========================= */
+
+            try {
+
+                const response =
+                    await fetch(
+                        base + "/heatmap?view=last_365"
+                    );
+
+                if (!response.ok) {
+                    throw new Error(
+                        "Heatmap request failed"
+                    );
+                }
+
+                const result =
+                    await response.json();
+
+                if (
+                    result.status === "success" &&
+                    result.data
+                ) {
+
+                    loadedSomething = true;
+
+                    const streak =
+                        Number(
+                            result.data.currentStreak || 0
+                        );
+
+                    document.getElementById(
+                        "leetcode-streak"
+                    ).textContent =
+                        streak + " days";
+                }
+
+            } catch (error) {
+
+                console.log(
+                    "LeetCode streak unavailable:",
+                    error
+                );
+            }
+
+
+            /* =========================
+               ERROR MESSAGE
+               ========================= */
+
+            if (errorBox) {
+
+                if (loadedSomething) {
+
+                    errorBox.textContent = "";
+
+                } else {
 
                     errorBox.textContent =
-                        "LeetCode live data is temporarily unavailable.";
+                        "LeetCode data could not be loaded right now.";
                 }
             }
         }
